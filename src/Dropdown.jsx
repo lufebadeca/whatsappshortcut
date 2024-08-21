@@ -1,20 +1,21 @@
-import React, { useState } from 'react';
+import { Col } from 'react-bootstrap';
 
-const Dropdown = ( {prefix, setPrefix} ) => {
+const Dropdown = ( {countryCode, setCode, countryCodes} ) => {
 
   const handleChange = (event) => {
-    setPrefix(event.target.value);
+    setCode(event.target.value);
+    console.log("Code changed to " + event.target.value);
   };
-
+  
   return (
-    <div>
-      <label htmlFor="dropdown">Elige el prefijo:</label>
-      <select id="dropdown" value={prefix} onChange={handleChange}>
-        <option value="57">+57</option>
-        <option value="58">+58</option>
-        <option value="59">+59</option>
+    <Col>
+      <label htmlFor="dropdown" className='w-50'>Elige el prefijo:</label>
+      <select id="dropdown" className='w-50' value={countryCode} onChange={handleChange}>
+        {countryCodes.map(
+          (country)=> <option key={country.name} value={country.key}> {country.name} (+{country.key})</option>
+        )}
       </select>
-    </div>
+    </Col>
   );
 };
 

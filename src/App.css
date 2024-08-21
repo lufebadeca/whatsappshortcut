@@ -1,5 +1,5 @@
-.App {
-  text-align: center;
+.root{
+  margin: 0px;
 }
 
 .app-body{
@@ -14,26 +14,55 @@
   background-color: #39615e;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   font-size: calc(6px + 2vmin);
   color: white;
   border-radius: 15px;
 }
 
 .typing-area{
-  display: flex;
+  /* display: flex;
   flex-direction: row;
+  flex-wrap: wrap;*/
+  box-sizing: border-box;
   padding: 25px;
+  margin: 20px;
   border-radius: 7px;
   background-color: rgb(154, 194, 179);
   border: 0px solid white;
+  padding: 10px;
 }
 
-.column{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.title{
+  text-align: center ;
+  white-space: nowrap;
+  display: inline-block;
+  font-size: calc(1.5rem + 1vw);
+}
+
+
+.prefix-dropdown {
+  display: grid;
+  grid-template-columns: 25px 25px;
+  width: auto;
+  box-sizing: border-box;
+  justify-content: space-around;
+}
+
+#dropdown{
+  width: 450px;
+  width: auto;
+  box-sizing: border-box;
+  cursor: pointer; 
+}
+
+#inputNumber {
+  /* height: 37px; */
+  width: auto;
+  box-sizing: border-box;
+  cursor:auto;
 }
 
 .custom-link {
@@ -45,16 +74,25 @@
   color: lightgray; /* opcional: color en hover */
 }
 
-.text-box{
-  width: 55px;
-}
-
 .title{
-  margin: 10px;
+  margin: 25px 10px 10px 10px;
 }
 
 .btn-primary{
   margin: 15px;
+}
+
+.typing-area > col > input
+
+.full-number{
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+}
+
+@media (min-width: 992px){
+  .typing-area > .col :first-child {
+    padding: 0 25px 0 0;
+  }
 }
 
 @keyframes App-logo-spin {

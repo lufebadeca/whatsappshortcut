@@ -1,4 +1,4 @@
-import React from "react";
+import {Col, Row} from "react-bootstrap";
 
 const Textbox = ( {value, updater}) => {
 
@@ -7,10 +7,11 @@ const Textbox = ( {value, updater}) => {
     } 
 
     return (
-        <>
-            <label htmlFor="inputNumber">Escribe el numero</label>
-            <input type='number' name='inputNumber' placeholder='123456789' onChange={updateHandler} value={value}></input>
-        </>
+        <Col>
+            <label htmlFor="inputNumber" className='w-50'>Escribe el numero</label>
+            <input type='number' id='inputNumber' placeholder='123456789' className='w-50' onChange={updateHandler} value={value} pattern="\d{10}"
+            title="Debe ingresar exactamente 10 dígitos." required></input>
+        </Col>
     );
 }
 
