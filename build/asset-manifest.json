@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/whatsappshortcut/build/static/css/main.c004449a.css",
-    "main.js": "/whatsappshortcut/build/static/js/main.b44729ef.js",
+    "main.css": "/whatsappshortcut/build/static/css/main.6fbf2fd8.css",
+    "main.js": "/whatsappshortcut/build/static/js/main.eac1aef3.js",
     "static/js/453.bb82127c.chunk.js": "/whatsappshortcut/build/static/js/453.bb82127c.chunk.js",
     "index.html": "/whatsappshortcut/build/index.html",
-    "main.c004449a.css.map": "/whatsappshortcut/build/static/css/main.c004449a.css.map",
-    "main.b44729ef.js.map": "/whatsappshortcut/build/static/js/main.b44729ef.js.map",
+    "main.6fbf2fd8.css.map": "/whatsappshortcut/build/static/css/main.6fbf2fd8.css.map",
+    "main.eac1aef3.js.map": "/whatsappshortcut/build/static/js/main.eac1aef3.js.map",
     "453.bb82127c.chunk.js.map": "/whatsappshortcut/build/static/js/453.bb82127c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c004449a.css",
-    "static/js/main.b44729ef.js"
+    "static/css/main.6fbf2fd8.css",
+    "static/js/main.eac1aef3.js"
   ]
 }
