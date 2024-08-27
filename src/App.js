@@ -5,6 +5,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dropdown from './Dropdown';
 import Textbox from './Textbox';
+import Button from './Button';
 import { Tab } from 'bootstrap';
 
 
@@ -143,12 +144,17 @@ function App() {
     { "key": 84, "name": "Vietnam" }
   ];
 
-  const [pNumber, setNumber] = useState(30);
+  const [number, setNumber] = useState('');
   const [countryCode, setCode] = useState(57);
+  const [buttonStatus, setButtonStatus] = useState(true);
 
-  const valueUpdater = (x) => {
-    setNumber(x);
-  };
+  function formatValue(value) {
+    // Remove any existing spaces or non-digit characters
+    const cleanedValue = value.replace(/\D/g, '');
+    // Insert spaces every 3 digits (for example)
+    const formattedValue = cleanedValue.replace(/(\d{3})(?=\d{3})|(\d{3})(?=\d{4})/g, '$1 ');
+    return (formattedValue);
+    };
 
   return (
     <>
@@ -161,22 +167,20 @@ function App() {
           <h4>Mensajea directamente a numeros no guardados</h4>
           <br></br>
 
-          <div className='typing-area d-flex flex-column flex-lg-row'>
-            <Col className='d-flex flex-column flex-lg-row'>
+          <div className='typing-area d-flex flex-column flex-md-row'>
+            <Col className='d-flex flex-column flex-md-row'>
               <Dropdown countryCode={countryCode} setCode={setCode} countryCodes={countryCodes} className='prefix-dropdown d-flex'></Dropdown>
-              <Textbox value={pNumber} updater={valueUpdater} className='number-field'></Textbox>
+              <Textbox value={number} valueUpdater={setNumber} setButtonStatus={setButtonStatus} className='number-field'></Textbox>
             </Col>            
           </div>
 
           <Row className='full-number'>
-            <p>Mensajeando a: +{countryCode} {pNumber}</p>
+            <p>Mensajeando a: +({countryCode}) {formatValue(number)}</p>
           </Row>
           
-          <button className='btn btn-primary fs-4'>
-            <a href={`https://api.whatsapp.com/send?phone=${countryCode}${pNumber}`} className='custom-link'>Enviar mensaje</a>
-          </button>
-        </div>
+          <Button countryCode={countryCode} number={number} buttonStatus={buttonStatus} buttonText='Enviar mensaje'></Button>
 
+        </div>
       </div>
     </>
   );
